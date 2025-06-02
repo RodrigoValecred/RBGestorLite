@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Product, Sale } from '../types';
-import { PlusIcon } from '../constants';
+import { Product, Sale } from '../types.ts';
+import { PlusIcon } from '../constants.tsx';
 
 interface SalesScreenProps {
   products: Product[];
@@ -136,4 +136,3 @@ const SalesScreen: React.FC<SalesScreenProps> = ({ products, sales, recordSale }
 };
 
 export default SalesScreen;
-    
