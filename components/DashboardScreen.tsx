@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Product, Sale, Expense } from '../types';
-import Card from './ui/Card';
+import { Product, Sale, Expense } from '../types.ts';
+import Card from './ui/Card.tsx';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 
 interface DashboardScreenProps {
@@ -98,4 +98,3 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({ products, sales, expe
 };
 
 export default DashboardScreen;
-    
