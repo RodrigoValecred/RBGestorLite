@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -6,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestor Lite</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 1. Adicionar Babel Standalone -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -29,21 +30,27 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- 2. Ajustar o importmap para melhor compatibilidade com Babel e React 19 -->
   <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.1.0",
+    "react/jsx-runtime": "https://esm.sh/react@^19.1.0/jsx-runtime",
+    "react-dom": "https://esm.sh/react-dom@^19.1.0",
+    "react-dom/client": "https://esm.sh/react-dom@^19.1.0/client",
+    "recharts": "https://esm.sh/recharts@^2.15.3",
     "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "recharts": "https://esm.sh/recharts@^2.15.3"
+    "react/": "https://esm.sh/react@^19.1.0/"
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-slate-900 text-slate-100">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- 3. Mudar o type do script para text/babel e adicionar data-presets -->
+    <!-- Isso instrui o Babel Standalone a transpilar este arquivo. -->
+    <!-- data-type="module" é importante para que o Babel trate os imports/exports corretamente. -->
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="./index.tsx"></script>
   </body>
 </html>
-    
