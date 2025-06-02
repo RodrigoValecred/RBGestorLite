@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { AppView } from '../types';
-import { DashboardIcon, InventoryIcon, SalesIcon, ExpensesIcon } from '../constants';
+import { AppView } from '../types.ts';
+import { DashboardIcon, InventoryIcon, SalesIcon, ExpensesIcon } from '../constants.tsx';
 
 interface SidebarProps {
   currentView: AppView;
@@ -43,4 +43,3 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView }) => {
 };
 
 export default Sidebar;
-    
