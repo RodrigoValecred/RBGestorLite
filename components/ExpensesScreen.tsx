@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Expense } from '../types';
-import { PlusIcon, TrashIcon } from '../constants';
+import { Expense } from '../types.ts';
+import { PlusIcon, TrashIcon } from '../constants.tsx';
 
 interface ExpensesScreenProps {
   expenses: Expense[];
@@ -111,4 +111,3 @@ const ExpensesScreen: React.FC<ExpensesScreenProps> = ({ expenses, addExpense, r
 };
 
 export default ExpensesScreen;
-    
