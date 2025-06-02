@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Product } from '../types';
-import { PlusIcon, TrashIcon } from '../constants';
+import { Product } from '../types.ts';
+import { PlusIcon, TrashIcon } from '../constants.tsx';
 
 interface InventoryScreenProps {
   products: Product[];
@@ -124,4 +124,3 @@ const InventoryScreen: React.FC<InventoryScreenProps> = ({ products, addProduct,
 };
 
 export default InventoryScreen;
-    
